@@ -18,7 +18,6 @@ const productSchema = new mongoose.Schema({
     timeStamps: true // Automatically adds createdAt and updatedAt fields
 });
 
-const Product = mongoose.model('Product', productSchema);
-// Mongoose will convert the Product into products collection in MongoDB. It just want you write like this with singular and capitalize lette mongoose will the rest for you.
+const Product = mongoose.model('Product', productSchema);// Mongoose will convert the Product into products collection in MongoDB. It just want you write like this with singular and capitalize lette mongoose will the rest for you.
 
 export default Product;

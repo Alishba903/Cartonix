@@ -9,6 +9,10 @@ const app = express();
 
 app.use(express.json()); // Middleware to parse JSON bodies. allows us to accept json data in the req.body.
 
+app.get('/', (req, res) => {
+       res.send('Hello World!');
+   });
+
 app.post("/api/products", async (req, res)=>{
     const product = req.body; // user will send this data 
 
@@ -19,7 +23,7 @@ app.post("/api/products", async (req, res)=>{
     const newProduct = new Product(product);
 
     try{
-        new Product.save();
+        newProduct.save();
         res.status(201).json({success: true, message: "Product created successfully", data: newProduct})
     }catch(error){
         console.log("Error in create Product", error.message);
